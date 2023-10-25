@@ -6,8 +6,11 @@
   import PokemonCard from "$lib/components/PokemonCard.svelte";
   import { getPokemon, pokemon } from "$lib/stores/pokemon";
   import type { Pokemon } from "$lib/types";
+  import { onMount } from "svelte";
 
-  getPokemon()
+  onMount(() => {
+    getPokemon()
+  })
   
   let searchTerm: string = ""
   let filteredPokemon: Pokemon[] = []
